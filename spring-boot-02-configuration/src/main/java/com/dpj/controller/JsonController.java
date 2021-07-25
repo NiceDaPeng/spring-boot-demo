@@ -1,7 +1,9 @@
 package com.dpj.controller;
 
 import com.dpj.config.FoodConfig;
+import com.dpj.config.FruitConfig;
 import com.dpj.entity.Food;
+import com.dpj.entity.Fruit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -35,5 +37,17 @@ public class JsonController {
 
         Food food = new Food(foodConfig.getRice(),foodConfig.getMeat());
         return food;
+    }
+
+    @Autowired
+    private FruitConfig fruitConfig;
+
+    @RequestMapping("/fruit")
+    public Fruit fruit(){
+        Fruit fruit = new Fruit();
+        fruit.setApple(fruitConfig.getApple());
+        fruit.setOrange(fruitConfig.getOrange());
+        fruit.setBanana(fruitConfig.getBanana());
+        return fruit;
     }
 }

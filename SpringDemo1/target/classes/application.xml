@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.dpj.spring.mod.Person">
+        <property name="id" value="111"/>
+        <property name="name" value="令狐冲"/>
+    </bean>
+
+    <bean id="s1" class="com.dpj.spring.mod.Student">
+        <property name="name" value="令狐冲"/>
+        <property name="age" value="30"/>
+        <property name="sex" value="男"/>
+    </bean>
+
+    <bean id="s2" class="com.dpj.spring.mod.Student">
+        <property name="name" value="张无忌"/>
+        <property name="age" value="30"/>
+        <property name="sex" value="男"/>
+    </bean>
+
+    <bean id="t1" class="com.dpj.spring.mod.Teacher">
+        <property name="tname" value="任盈盈"/>
+        <property name="tsex" value="女"/>
+        <property name="tage" value="30"/>
+        <property name="stuList">
+            <list>
+                <ref bean="s1"/>
+                <ref bean="s2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="t2" class="com.dpj.spring.mod.Teacher">
+        <property name="tname" value="裘千仞"/>
+        <property name="tsex" value="男"/>
+        <property name="tage" value="30"/>
+        <property name="stuList">
+            <list>
+                <ref bean="s1"/>
+                <ref bean="s2"/>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="one">
+                    <value>nice</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>two</value>
+                    </key>
+                    <value>good</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="t3" class="com.dpj.spring.mod.Teacher">
+        <property name="tname" value="黄药师"/>
+        <property name="tsex" value="男"/>
+        <property name="tage" value="30"/>
+        <property name="stuList">
+            <list>
+                <ref bean="s1"/>
+                <ref bean="s2"/>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="one">
+                    <value>nice</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>two</value>
+                    </key>
+                    <value>good</value>
+                </entry>
+            </map>
+        </property>
+        <property name="set" >
+            <set>
+                <value>杨过</value>
+                <value>郭靖</value>
+                <value>黄蓉</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="p1" class="com.dpj.spring.mod.Person"></bean>
+</beans>
